@@ -7,9 +7,9 @@ import {
   Platform,
   ScrollView,
 } from 'react-native';
-import ImagePicker from '../../ImagePicker';
-import PetForm from '../../PetForm';
-import PrimaryButton from '../../PrimaryButton';
+import ImagePicker from '../../components/ImagePicker';
+import PetForm from '../../components/PetForm';
+import PrimaryButton from '../../components/PrimaryButton';
 import Toast from 'react-native-toast-message';
 import axios from 'axios';
 
@@ -36,8 +36,8 @@ export default function HomeScreen({ navigation }: any) {
       });
       setFormData({});
       setImage(null);
-      setResetForm(true); // trigger reset
-      setTimeout(() => setResetForm(false), 100); // allow PetForm to reset
+      setResetForm(true);
+      setTimeout(() => setResetForm(false), 100);
     } catch (err) {
       setError('Submission failed');
     } finally {

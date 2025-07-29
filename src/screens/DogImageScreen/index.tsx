@@ -7,7 +7,7 @@ import {
   Alert,
 } from 'react-native';
 import axios from 'axios';
-import PrimaryButton from '../../PrimaryButton';
+import PrimaryButton from '../../components/PrimaryButton';
 
 export default function DogImageScreen() {
   const [dogImage, setDogImage] = useState<string | null>(null);

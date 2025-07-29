@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './src/components/screens/HomeScreen';
-import DogImageScreen from './src/components/screens/DogImageScreen';
+import HomeScreen from './src/screens/HomeScreen';
+import DogImageScreen from './src/screens/DogImageScreen';
 
 const Stack = createNativeStackNavigator();
 

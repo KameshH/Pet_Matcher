@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Button, Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 import PrimaryButton from '../PrimaryButton';
 
@@ -12,10 +12,23 @@ export default function ImagePicker({ onImagePicked, image }: any) {
     });
   };
 
+  const takePhoto = () => {
+    launchCamera({ mediaType: 'photo' }, (response: any) => {
+      if (response.assets?.length) {
+        onImagePicked(response.assets[0].uri);
+      }
+    });
+  };
+
   return (
     <View style={{ alignItems: 'center', marginVertical: 20 }}>
       {image && <Image source={{ uri: image }} style={styles.image} />}
-      <PrimaryButton title="Pick Image from Gallery" onPress={pickImage} />
+      <PrimaryButton
+        title="Upload Image"
+        onPress={pickImage}
+        style={{ marginBottom: 10 }}
+      />
+      <PrimaryButton title="Take Photo" onPress={takePhoto} />
     </View>
   );
 }
