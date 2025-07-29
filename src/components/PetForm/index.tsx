@@ -29,7 +29,7 @@ export default function PetForm({ setFormData, reset }: any) {
         onChangeText={text => setFields(f => ({ ...f, breed: text }))}
       />
       <TextInput
-        placeholder="Age (optional)"
+        placeholder="Age"
         style={styles.input}
         value={fields.age}
         onChangeText={text => setFields(f => ({ ...f, age: text }))}

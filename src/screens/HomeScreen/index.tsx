@@ -71,11 +71,13 @@ export default function HomeScreen({ navigation }: any) {
           />
         </View>
         <Toast position="top" />
-        <PrimaryButton
-          title="View Random Dog"
-          onPress={() => navigation.navigate('DogImage')}
-          style={styles.dogBtn}
-        />
+        <View style={styles.buttonContainer}>
+          <PrimaryButton
+            title="View Random Dog"
+            onPress={() => navigation.navigate('DogImage')}
+            style={styles.dogBtn}
+          />
+        </View>
       </KeyboardAvoidingView>
     </ScrollView>
   );
@@ -115,4 +117,5 @@ const styles = StyleSheet.create({
     width: '90%',
     alignSelf: 'center',
   },
+  buttonContainer: { marginBottom: 40, alignItems: 'center' },
 });
